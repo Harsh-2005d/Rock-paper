@@ -1,0 +1,34 @@
+<script>
+    function computerchoice(){
+        let num = Math.random();
+        if(num < 0.33){
+            return 'rock';
+        }
+        else if (num < 0.66) {
+            return 'paper';
+        } else {
+            return 'scissors';    
+        }
+    }
+    
+    function humanchoice(){
+        let input = prompt("Enter your choice", "rock");
+        return input.toLowerCase(); // Normalize input to lowercase
+    }
+
+    let human = humanchoice();
+    let comp = computerchoice();
+
+    console.log("Computer chose: " + comp);
+    console.log("You chose: " + human);
+
+    if(human === comp){
+        console.log("It's a draw!");
+    } else if((comp === 'rock' && human === 'scissors') || 
+              (comp === 'scissors' && human === 'paper') || 
+              (comp === 'paper' && human === 'rock')) {
+        console.log("You lose!");
+    } else {
+        console.log("You win!");
+    }
+</script>
